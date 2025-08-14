@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/normalize.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/media.css">
+  <link rel="shortcut icon" href="img/logo.svg" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script defer src="./script/main.js"></script>
+  <title>SkillBus</title>
+</head>
+
+<body>
+  <header class="header">
+    <div class="container header__container">
+      <div class="header__wrap flex">
+        <img src="./img/logo.svg" alt="лого SkillBus" class="img header__logo">
+
+        <input type="text" placeholder="Введите запрос" id="input-search" class="header__search">
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="clients">
+      <div class="container">
+        <h2 class="title clients__title">
+          Клиенты
+        </h2>
+
+        <div class="clients__table-content">
+          <table class="table" id="table">
+            <thead class="thead">
+              <tr class="tr">
+                <th class="th clients__id" data-type="number">
+                  ID
+                </th>
+
+                <th class="th clients__sln" data-type="string">
+                  <span class="clients__sln-span">Фамилия Имя Отчество</span>
+                  <span class="clients__sln-alph">А-Я</span>
+                </th>
+
+                <th class="th clients__data" data-type="number">
+                  Дата и время создания
+                </th>
+
+                <th class="th clients__changes" data-type="number">
+                  Последние изменения
+                </th>
+
+                <th class="th clients__cont">
+                  Контакты
+                </th>
+
+                <th class="th clients__act" id="th">
+                  Действия
+                </th>
+              </tr>
+            </thead>
+
+            <tbody class="table__body" id="tbody">
+
+            </tbody>
+          </table>
+        </div>
+
+        <div class="clients__btn-wrap flex">
+          <button class="btn btn-reset clients__btn" id="add-client">
+            Добавить клиента
+          </button>
+        </div>
+
+        <div class="modalBackdrop" id="modal-backdrop"></div>
+
+        <div class="clients__modal modal">
+          <div class="modal__wrap" id="clients-modal">
+            <div class="modal__top">
+              <h2 class="title modal__title">
+                Изменить данные
+              </h2>
+              <span class="modal__id" id="id-span">ID:</span>
+            </div>
+
+            <form class="form" id="form-client">
+              <div class="form__wrap">
+                <ul class="form__pack-list list-reset form__list">
+                  <li class="form__list-item">
+                    <div class="form__spans" id="lastname__spans">
+                      <span class="form__span" id="lastname">Фамилия</span>
+                      <span class="form__mark">*</span>
+                    </div>
+                    <input type="text" name="lastname" id="input__lastname" class="form__input" required>
+                  </li>
+
+                  <li class="form__list-item">
+                    <div class="form__spans" id="name__spans">
+                      <span class="form__span" id="name">Имя</span>
+                      <span class="form__mark">*</span>
+                    </div>
+                    <input type="text" name="name" id="input__name" class="form__input" required>
+                  </li>
+
+                  <li class="form__list-item" id="surname__item">
+                    <div class="form__label" id="surname__label"></div>
+                    <span class="form__span" id="surname">Отчество</span>
+                    <input type="text" name="surname" id="input__surname" class="form__input">
+                  </li>
+                </ul>
+
+                <div class="form__selin">
+                  <div class="form__selin-wrap">
+                    <div id="contacts-container" class="contacts-container"></div>
+
+                    <div class="form__selin-sec flex">
+                      <button class="form__btn btn btn-reset form__add" id="form__add">Добавить контакт</button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form__error-wrap" id="error-wrap">
+                  <span class="form__error" id="error-span">
+
+                  </span>
+                </div>
+
+                <div class="form__buttons-wrap flex">
+                  <button class="form__btn btn btn-reset btn-positive" type="submit" id="form__save">Сохранить</button>
+                  <button class="form__btn btn btn-reset btn-negative" id="form__delete">Удалить клиента</button>
+                </div>
+              </div>
+            </form>
+
+            <button class="btn btn__close close-fst btn-reset" id="close-btn"></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal__delete" id="delete-modal">
+        <div class="modal__delete-wrap flex">
+          <h2 class="title modal__delete-title">
+            Удалить клиента
+          </h2>
+
+          <p class="modal__descr">
+            Вы действительно хотите удалить данного клиента?
+          </p>
+
+          <button class="btn btn-positive btn-reset" id="delete-positive">
+            Удалить
+          </button>
+
+          <button class="btn btn-negative btn-reset" id="delete-negative">
+            Отмена
+          </button>
+
+          <button class="btn btn__close close-sec btn-reset" id="close-modal">
+
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+
+</html>
